@@ -1,6 +1,6 @@
 let n
 inStart()
-setInterval(()=>{ 
+let timer = setInterval(()=>{ 
     makeLeave(getImage(n))
     .one('transitionend',(a)=>{
         makeEnter($(a.currentTarget))
@@ -8,6 +8,21 @@ setInterval(()=>{
     makeCurrent(getImage(n+1))
     n += 1
 },2000)
+document.addEventListener('visibilitychange',function(a){
+    if(document.hidden){
+        window.clearInterval(timer)
+    }else{
+        timer = setInterval(()=>{ 
+            makeLeave(getImage(n))
+            .one('transitionend',(a)=>{
+                makeEnter($(a.currentTarget))
+            })
+            makeCurrent(getImage(n+1))
+            n += 1
+        },2000)
+    }
+})
+
 
 //功能函数
 function getImage(n){
