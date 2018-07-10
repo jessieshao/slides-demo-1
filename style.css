@@ -1,48 +1,60 @@
 *{margin: 0; padding: 0;}
 *{box-sizing: border-box;}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+  }
 
+.container{
+    position: relative;   
+}
 .window{
     width: 500px;
     height: 300px;
     margin: 20px auto;
-    overflow: hidden;
-}
-.images{
-    display: flex;
+    overflow: hidden; 
     position: relative;
 }
-.images > img{
-    width: 100%;
+
+.images{
+    display: flex;
     transition: all 1s;
-    position: absolute;
-    top: 0;
 }
 
-.images > img.current{
-    left: 0;
-    transform: translateX(0);
-    z-index: 1;
+.images > img{
+    width: 100%;
 }
-.images > img.leave{
-    transform: translateX(-100%);
-}
-.images > img.enter{
-    transform: translateX(100%);
-}
-.btn{
+.buttonWapper{
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 20px;
-    text-align: center;
-    border: 1px solid #fff;
-    border-radius: 50%;
-    color: #fff;
-    background: #4f443C;
-    opacity: 0.7;
-    text-decoration: none;
-    cursor: pointer;
+    top: 90% ;
+    left: 47%;
+}
+
+.buttonWapper > button{
+    width: 15px;
+    height: 6px;
+    border-radius: 2px;
+    outline: none;
+    background-color: #D9D6B5;
+}
+.controls{
+    position: absolute;
+    top: 50% ;
+    width: 500px;
+}
+.controls .next{
+    float: right;
+    width: 15px;
+    height: 20px;
+    background: grey;
+    outline: none;
+    border-radius: 2px;
+}
+.controls .pre{
+    width: 15px;
+    height: 20px;
+    background: grey;
+    outline: none;
+    border-radius: 2px;
 }
