@@ -46,15 +46,17 @@
 .controls .next{
     float: right;
     width: 15px;
-    height: 20px;
+    height: 25px;
     background: grey;
     outline: none;
     border-radius: 2px;
+    border: none;
 }
 .controls .pre{
     width: 15px;
-    height: 20px;
+    height: 25px;
     background: grey;
     outline: none;
     border-radius: 2px;
+    border: none;
 }
